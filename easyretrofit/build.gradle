@@ -24,7 +24,7 @@ android {
         artifactId = 'easyretrofit-release'
         publishVersion = '1.0.0'
         desc = 'Oh hi, this is a nice description for a project, right?'
-        website = 'https://github.com/novoda/bintray-release'
+        website = 'https://github.com/forYueji/EasyRetrofit.git'
     }
 }
 
