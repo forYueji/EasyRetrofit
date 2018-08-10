@@ -67,3 +67,14 @@
     [retrofit2](api 'com.squareup.retrofit2:retrofit:2.4.0')
     [converter-scalars](api 'com.squareup.retrofit2:converter-scalars:2.2.0')
     [adapter-rxjava2](api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0')   
+    
+---
+    <dependency>
+      <groupId>com.hyp.easy.easyretrofit</groupId>
+      <artifactId>hyp</artifactId>
+      <version>1.0.0</version>
+      <type>pom</type>
+    </dependency>
+    
+    compile 'com.hyp.easy.easyretrofit:hyp:1.0.0'
+    
