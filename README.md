@@ -76,5 +76,6 @@
       <type>pom</type>
     </dependency>
     
-    compile 'com.hyp.easy.easyretrofit:hyp:1.0.0'
+    
+    implementation 'com.hyp.easy.easyretrofit:hyp:1.0.0'
     
