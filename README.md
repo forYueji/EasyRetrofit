@@ -13,6 +13,12 @@
      如下：
       
     使用方法：
+    
+        Application 中初始化
+    
+        RetrofitClient.init(this, "http://www.baidu.com").build();
+        
+       
         
         RetrofitManager.getInstance().post(changeHttpUrl(url), readeHeader(), params, new DisposeObserver<RequestCallback>() {
                     @Override
