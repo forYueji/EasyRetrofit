@@ -97,6 +97,7 @@ public class DefInterceptorCommon implements Interceptor {
         int netType = NETTYPE_NULL;
         ConnectivityManager connectivityManager =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert connectivityManager != null;
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo == null) {
             return netType;

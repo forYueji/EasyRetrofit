@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 
-import com.yhfund.net.api.API;
-import com.yhfund.net.base.BaseObserver;
-import com.yhfund.net.util.TransformerUtil;
+import com.hyp.easy.easyretrofit.api.API;
+import com.hyp.easy.easyretrofit.base.BaseObserver;
+import com.hyp.easy.easyretrofit.util.TransformerUtil;
 
 import java.io.File;
 import java.io.InputStream;

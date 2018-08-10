@@ -17,7 +17,6 @@ import okhttp3.HttpUrl;
  * <p>
  * <p>Copyright: Copyright (c) 2017</p>
  * <p>
- * <p>Company: yhfund</p>
  */
 
 public class DefManagerCookie implements CookieJar {

@@ -1,7 +1,7 @@
 package com.hyp.easy.easyretrofit.base;
 
 
-import com.yhfund.net.SubscriberInterface;
+import com.hyp.easy.easyretrofit.SubscriberInterface;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
