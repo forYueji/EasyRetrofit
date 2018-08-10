@@ -1,5 +1,3 @@
-//apply plugin: 'com.novoda.bintray-release'
-
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
@@ -19,15 +17,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-//    publish {
-//        userOrg = 'foryueji'
-//        groupId = 'com.hyp'
-//        artifactId = 'easyretrofit-release'
-//        publishVersion = '1.0.0'
-//        desc = 'Oh hi, this is a nice description for a project, right?'
-//        website = 'https://github.com/forYueji/EasyRetrofit'
-//    }
 }
 
 android {
@@ -53,8 +42,6 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.4.0'
     api 'com.squareup.retrofit2:converter-scalars:2.2.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-
-    implementation 'com.android.support:multidex:1.0.3'
 }
 
 publish {
