@@ -4,13 +4,15 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 
+import com.hyp.easy.easyretrofit.RequestFormatTransformation;
+import com.hyp.easy.easyretrofit.RetrofitClient;
 import com.hyp.easy.easyretrofit.api.API;
 import com.hyp.easy.easyretrofit.base.BaseObserver;
 import com.hyp.easy.easyretrofit.util.TransformerUtil;
 
 import java.io.File;
 import java.io.InputStream;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -24,7 +26,9 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
-
+/**
+ * 网络请求处理
+ */
 public class RetrofitManager {
 
     @SuppressLint("StaticFieldLeak")
@@ -52,8 +56,8 @@ public class RetrofitManager {
      * @param params
      * @param observer
      */
-    public void post(@Nullable final String url, @Nullable HashMap<String, String> headerMap,
-                     @Nullable HashMap<String, String> params, @Nullable BaseObserver<String> observer) {
+    public void post(@Nullable final String url, @Nullable ConcurrentHashMap<String, String> headerMap,
+                     @Nullable ConcurrentHashMap<String, String> params, @Nullable BaseObserver<String> observer) {
         if (!checkMap(headerMap, params)) {
             return;
         }
@@ -69,7 +73,7 @@ public class RetrofitManager {
      * @param headerMap
      * @param observer
      */
-    public static void downloadPicFromNetFile(@Nullable String url, @Nullable HashMap<String, String> headerMap,
+    public static void downloadPicFromNetFile(@Nullable String url, @Nullable ConcurrentHashMap<String, String> headerMap,
                                               @Nullable final String filePath, @Nullable final String fileName,
                                               @Nullable BaseObserver<File> observer) {
         if (!checkMap(headerMap)) {
@@ -94,10 +98,11 @@ public class RetrofitManager {
      * @param url
      * @param headerMap
      * @param params
+     *         ConcurrentHashMap
      * @param observer
      */
-    public static void downloadPicFromNetBitmap(@Nullable String url, @Nullable HashMap<String, String> headerMap,
-                                                @Nullable HashMap<String, String> params, @Nullable BaseObserver<Bitmap> observer) {
+    public static void downloadPicFromNetBitmap(@Nullable String url, @Nullable ConcurrentHashMap<String, String> headerMap,
+                                                @Nullable ConcurrentHashMap<String, String> params, @Nullable BaseObserver<Bitmap> observer) {
         if (!checkMap(headerMap, params)) {
             return;
         }
@@ -120,7 +125,7 @@ public class RetrofitManager {
      * @param headerMap
      * @param observer
      */
-    public static void downloadPicFromNetBitmap(@Nullable String url, @Nullable HashMap<String, String> headerMap,
+    public static void downloadPicFromNetBitmap(@Nullable String url, @Nullable ConcurrentHashMap<String, String> headerMap,
                                                 @Nullable BaseObserver<Bitmap> observer) {
         if (!checkMap(headerMap)) {
             return;
@@ -145,8 +150,8 @@ public class RetrofitManager {
      * @param params
      * @param observer
      */
-    public static void upLoad(@Nullable final String url, @Nullable final HashMap<String, String> headerMap,
-                              @Nullable final HashMap<String, String> params, @Nullable final HashMap<String, File> files,
+    public static void upLoad(@Nullable final String url, @Nullable final ConcurrentHashMap<String, String> headerMap,
+                              @Nullable final ConcurrentHashMap<String, String> params, @Nullable final ConcurrentHashMap<String, File> files,
                               @Nullable final BaseObserver<String> observer) {
         if (!checkMap(headerMap, params)) {
             return;
@@ -205,11 +210,11 @@ public class RetrofitManager {
                 });
     }
 
-    private static boolean checkMap(HashMap<String, String> headerMap, HashMap<String, String> params) {
+    private static boolean checkMap(ConcurrentHashMap<String, String> headerMap, ConcurrentHashMap<String, String> params) {
         return !(null == headerMap) || !(null == params);
     }
 
-    private static boolean checkMap(HashMap<String, String> headerMap) {
+    private static boolean checkMap(ConcurrentHashMap<String, String> headerMap) {
         return !(null == headerMap);
     }
 }
